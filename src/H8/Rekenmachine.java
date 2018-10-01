@@ -1,7 +1,5 @@
 package H8;
 
-import com.sun.corba.se.impl.orbutil.graph.Graph;
-
 import java.applet.Applet;
 import java.awt.*;
 import java.awt.event.*;
@@ -11,8 +9,8 @@ public class Rekenmachine extends Applet {
 
     TextField textfield1,textfield2;
     Button button1,button2,button3,button4;
-    String string, test1;
-    double calculation1;
+
+
     double result;
 
 
@@ -33,23 +31,22 @@ public class Rekenmachine extends Applet {
         // button1 = keer (x a.k.a *)
         button1 = new Button("x");
         add(button1);
-        ButtonListener1 b1l = new ButtonListener1();
+        MultiplyListener b1l = new MultiplyListener();
         button1.addActionListener (b1l);
 
-        test1 = "";
 
         //button2
         button2 = new Button(":");
         add (button2);
-        ButtonListener2 b2l = new ButtonListener2();
-        button1.addActionListener (b2l);
+        DivisionListener b2l = new DivisionListener();
+        button2.addActionListener (b2l);
 
 
         //button3
         button3 = new Button("+");
         add (button3);
         ButtonListener3 b3l = new ButtonListener3();
-        button1.addActionListener (b3l);
+        button3.addActionListener (b3l);
 
 
 
@@ -57,9 +54,8 @@ public class Rekenmachine extends Applet {
         button4 = new Button("-");
         add (button4);
         ButtonListener4 b4l = new ButtonListener4();
-        button1.addActionListener (b4l);
+        button4.addActionListener (b4l);
 
-        string = "";
 
     }
 
@@ -77,15 +73,14 @@ public class Rekenmachine extends Applet {
         button4.setSize(20,20);
         button4.setLocation(295,9);
 
-
     }
 
-    class ButtonListener1 implements ActionListener{
+    class MultiplyListener implements ActionListener{
 
         public void actionPerformed(ActionEvent e){
 
-            Double num1 = Double.parseDouble(textfield1.getText());
-            Double num2 = Double.parseDouble(textfield2.getText());
+            double num1 = Double.parseDouble(textfield1.getText());
+            double num2 = Double.parseDouble(textfield2.getText());
 
             result = num1 * num2;
             textfield1.setText("" + result);
@@ -98,12 +93,12 @@ public class Rekenmachine extends Applet {
 
 
 
-    class ButtonListener2 implements ActionListener{
+    class DivisionListener implements ActionListener{
 
         public void actionPerformed(ActionEvent e){
 
-            Double num1 = Double.parseDouble(textfield1.getText());
-            Double num2 = Double.parseDouble(textfield2.getText());
+            double num1 = Double.parseDouble(textfield1.getText());
+            double num2 = Double.parseDouble(textfield2.getText());
 
             result = num1 / num2;
             textfield1.setText("" + result);
@@ -118,8 +113,8 @@ public class Rekenmachine extends Applet {
 
         public void actionPerformed(ActionEvent e){
 
-            Double num1 = Double.parseDouble(textfield1.getText());
-            Double num2 = Double.parseDouble(textfield2.getText());
+            double num1 = Double.parseDouble(textfield1.getText());
+            double num2 = Double.parseDouble(textfield2.getText());
 
             result = num1 + num2;
             textfield1.setText("" + result);
@@ -134,8 +129,8 @@ public class Rekenmachine extends Applet {
 
         public void actionPerformed(ActionEvent e){
 
-            Double num1 = Double.parseDouble(textfield1.getText());
-            Double num2 = Double.parseDouble(textfield2.getText());
+            double num1 = Double.parseDouble(textfield1.getText());
+            double num2 = Double.parseDouble(textfield2.getText());
 
             result = num1 - num2;
             textfield1.setText("" + result);
