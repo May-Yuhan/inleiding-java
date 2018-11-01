@@ -33,8 +33,7 @@ public class Praktijkopdracht extends Applet {
         add(textfield);
 
         //TEXTFIELD LISTENER
-        TextfieldListener tl = new TextfieldListener();
-        textfield.addActionListener(tl);
+        textfield.addActionListener(bl);
 
         uitkomst = "";
     }
@@ -74,19 +73,7 @@ public class Praktijkopdracht extends Applet {
 
             getal = Double.parseDouble(textfield.getText());
 
-            if (getal < 1 || getal > 10) {
-                uitkomst = "Verkeerd cijfer ingevoerd.";
-            } else if (getal <= 3) {
-                uitkomst = "Slecht";
-            } else if (getal <= 4) {
-                uitkomst = "Onvoldoende";
-            } else if (getal < 5.5) {
-                uitkomst = "Matig";
-            } else if (getal >= 8) {
-                uitkomst = "Goed";
-            } else {
-                uitkomst = "Voldoende";
-            }
+
 
             repaint();
         }

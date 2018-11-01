@@ -1,9 +1,6 @@
 package H10;
 
 
-//MAAK EEN VARIABELE ALS TELLER VAN JE GETALLEN EN EEN VARIABELE DIE AL JE GETALLEN BIJ ELKAAR OPTELT EN DAN DEEL JE DIE 2 VOOR EEN GEMIDDELDE
-
-import javax.swing.*;
 import java.applet.Applet;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -19,6 +16,7 @@ public class Opdracht_10_5 extends Applet {
 
 
     public void init() {
+
         //APPLET WINDOW SIZE
         setSize(400, 400);
 
@@ -106,13 +104,7 @@ public class Opdracht_10_5 extends Applet {
             else
                 uitslag = "Hoera, je bent geslaagd.";
 
-
-
-
             repaint();
-
         }
     }
-
-
 }
