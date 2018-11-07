@@ -15,19 +15,19 @@ public class Opdracht_11_3 extends Applet {
 
       int a = 0;
       int b = 1;
-      int c = 0;
 
+        for(int d = 0; d < 10; ++ d) {
 
-        for(a = 0; a < 10; ++ a);
+            int c = a + b;
 
-        b += a;
+            // Voorbeiden op de volgende iteratie
+            a = b;
+            b = c;
 
-        c = a + b;
+            string.valueOf(c);
+            System.out.println(c);
 
-        string.valueOf(c);
-        System.out.println(c);
-
-
+        }
 
     }
 }
