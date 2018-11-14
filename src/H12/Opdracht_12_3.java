@@ -16,17 +16,15 @@ public class Opdracht_12_3 extends Applet {
 
     public void init() {
 
-        setSize(600,200);
+        setSize(600, 200);
 
         textfield = new TextField[5];
         getallen = new int[5];
 
-
         for (int i = 0; i < textfield.length; i++) {
 
-            textfield[i] = new TextField("",10);
+            textfield[i] = new TextField("", 10);
             add(textfield[i]);
-
 
         }
 
@@ -34,44 +32,25 @@ public class Opdracht_12_3 extends Applet {
         button = new Button("SORT");
         button.addActionListener(new ButtonListener());
         add(button);
-
-
-
-
     }
 
-    public void paint(Graphics g) {
+    public class ButtonListener implements ActionListener {
 
-
-    }
-
-    public class ButtonListener implements ActionListener{
-
-        public void actionPerformed(ActionEvent e){
+        public void actionPerformed(ActionEvent e) {
 
             ArrayList<Integer> toSort = new ArrayList<>();
 
-            for(int i = 0; i < getallen.length; i++){
+                for (int i = 0; i < getallen.length; i++) {
+                    int invoer = Integer.parseInt(textfield[i].getText());
+                    toSort.add(invoer);
 
-                int invoer = Integer.parseInt(textfield[i].getText());
+                }
 
-                toSort.add(invoer);
-
+                // SORTEREN
+                Collections.sort(toSort);
+                for (int i = 0; i < textfield.length; i++) {
+                textfield[i].setText("" + toSort.get(i));
             }
-            // sorteren
-            Collections.sort(toSort);
-           // Collections.reverse(toSort);
-
-            for (int i = 0; i < textfield.length; i++) {
-
-
-                textfield[i].setText(""+toSort.get(i));
-
-            }
-
-
-
-
         }
     }
 }
